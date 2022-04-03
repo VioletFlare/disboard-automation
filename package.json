@@ -1,8 +1,17 @@
 {
+  "name": "disboard-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "e2e": "cucumber-js --require cucumber.conf.js --require steps",
+    "start": "npm run e2e -- features"
+  },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.2",
     "chromedriver": "^100.0.0",
-    "cucumber-pretty": "^6.0.1",
     "nightwatch-api": "^3.0.2"
-  }
+  },
+  "author": "",
+  "license": "ISC"
 }

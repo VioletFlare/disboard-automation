@@ -1,7 +1,7 @@
 const chromedriver = require('chromedriver');
 
 module.exports = {
-  src_folders : ["tests"], //tests is a folder in workspace which has the step definitions
+  src_folders: ["steps"],
   test_settings: {
     default: {
       webdriver: {
