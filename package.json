@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "e2e": "cucumber-js --require cucumber.conf.js --require steps",
-    "start": "npm run e2e -- features"
+    "start": "npm run e2e -- features",
+    "run-single-feature": "npm run e2e -- features/topgg.feature"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.2",
