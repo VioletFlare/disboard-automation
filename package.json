@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.3.2",
+    "chromedriver": "^100.0.0",
+    "cucumber-pretty": "^6.0.1",
+    "nightwatch-api": "^3.0.2"
+  }
+}
