@@ -1,3 +1,5 @@
+@fdiscordst
+
 Feature: Discordst Automation
 
 Scenario: Discordst

@@ -9,9 +9,18 @@ When(/^I click topgg login$/, async () => {
     await client.click(loginButtonSel);
 })
 
-When(/^I click topgg vote$/, async () => {
+Then(/^I land on topgg page$/, async () => {
+    const banner = 
+        "[class*='StyleProvider'] img";
+
+    await client.waitForElementVisible(banner, timeout);
+})
+
+Then(/^I click topgg vote$/, async () => {
     const voteButtonSel = 
         "div > div > div.chakra-container > div > section > div > div > div > a";
 
-    await client.click(voteButtonSel);
+    await client
+        .waitForElementVisible(voteButtonSel, timeout)
+        .click(voteButtonSel);
 })

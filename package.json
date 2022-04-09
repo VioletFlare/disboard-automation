@@ -2,16 +2,26 @@
   "name": "disboard-automation",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "./main.js",
+  "bin": "./main.js",
+  "pkg": {
+    "targets": [
+      "node16-win-x64"
+    ],
+    "outputPath": "./dist"
+  },
   "scripts": {
     "e2e": "cucumber-js --require cucumber.conf.js --require steps",
     "start": "npm run e2e -- features",
-    "run-single-feature": "npm run e2e -- features/topgg.feature"
+    "run-single-feature": "npm run e2e -- features/topgg.feature",
+    "run-login-and-x": "cucumber-js --require cucumber.conf.js --require steps --tags @flogin @ftopgg",
+    "build": "pkg package.json && xcopy /E /I node_modules dist\\node_modules && xcopy /E /I steps dist\\steps && xcopy /E /I features dist\\features && copy cucumber.conf.js dist && copy nightwatch.conf.js dist"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.2",
     "chromedriver": "^100.0.0",
-    "nightwatch-api": "^3.0.2"
+    "nightwatch-api": "^3.0.2",
+    "pkg": "^5.6.0"
   },
   "author": "",
   "license": "ISC"
