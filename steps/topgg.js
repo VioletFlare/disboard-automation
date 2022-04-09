@@ -16,9 +16,18 @@ Then(/^I land on topgg page$/, async () => {
     await client.waitForElementVisible(banner, timeout);
 })
 
+Then (/^I click on topgg prevote$/, async () => {
+    const prevoteButtonSel = 
+        "div > div.chakra-container > div > section > div > div > div > div > div > div > a"
+
+    await client
+        .waitForElementVisible(prevoteButtonSel, timeout)
+        .click(prevoteButtonSel);
+})
+
 Then(/^I click topgg vote$/, async () => {
     const voteButtonSel = 
-        "div > div > div.chakra-container > div > section > div > div > div > a";
+        "div > div > div > div.chakra-container > div > div > div > div > div > div > main > div > div > div > button:not([disabled])";
 
     await client
         .waitForElementVisible(voteButtonSel, timeout)

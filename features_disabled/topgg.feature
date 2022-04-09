@@ -7,7 +7,9 @@ Scenario: Topgg
     When I click topgg login
     Then I click discord authorize button
     Then I land on topgg page
-    Then I go to <vote_url>
+    Then I click on topgg prevote
+    #Then I go to <vote_url>
+    Then I click topgg vote
     Then I wait 50 s
 
 Examples:
