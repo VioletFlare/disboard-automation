@@ -10,7 +10,6 @@ Scenario: Topgg
     Then I click on topgg prevote
     #Then I go to <vote_url>
     Then I click topgg vote
-    Then I wait 50 s
 
 Examples:
     | url                                       | vote_url                                       |
