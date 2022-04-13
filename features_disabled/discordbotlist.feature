@@ -9,7 +9,6 @@ Scenario: Discordbotlist Upvote
     Given I go to <url>
     Then I click discordbotlist upvote
     Then I click discord authorize button
-    Then I wait 50 s
 
 Examples:
     | url                                                      |

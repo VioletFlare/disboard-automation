@@ -15,7 +15,7 @@
     "start": "npm run e2e -- features",
     "run-single-feature": "npm run e2e -- features/topgg.feature",
     "run-login-and-x": "cucumber-js --tags='@flogin and @ftopgg' --require cucumber.conf.js --require steps",
-    "build": "pkg package.json && xcopy /E /I node_modules dist\\node_modules && xcopy /E /I steps dist\\steps && xcopy /E /I features dist\\features && copy cucumber.conf.js dist && copy nightwatch.conf.js dist"
+    "build": "pkg package.json && xcopy /E /I node_modules dist\\node_modules && xcopy /E /I steps dist\\steps && xcopy /E /I features dist\\features && copy cucumber.conf.js dist && copy nightwatch.conf.js dist && xcopy /E /I features dist\\features_disabled"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.2",
