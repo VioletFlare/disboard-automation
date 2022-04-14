@@ -33,7 +33,7 @@ const client2 = Nightwatch.createClient({
     disable_colors: false
 });
 */
-const timeout = 60000000;
+const timeout = 5000;
 
 Then(/^I set discordbotlist cloudflare headers$/, async () => {
     const browser = await client.launchBrowser();

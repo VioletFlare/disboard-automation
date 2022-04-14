@@ -1,7 +1,7 @@
 const { Given, Then, When } = require('@cucumber/cucumber');
 const { client } = require('nightwatch-api');
 
-const timeout = 60000000;
+const timeout = 5000;
 
 When(/^I click discordservers login$/, async () => {
     const loginButtonSel = "section > div > div > div > div > button";

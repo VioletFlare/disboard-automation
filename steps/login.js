@@ -2,7 +2,7 @@ const { Given, Then, When } = require('@cucumber/cucumber');
 const { client } = require('nightwatch-api');
 const credentials = require('../credentials.config');
 
-const timeout = 60000000;
+const timeout = 20000;
 
 Then(/^I insert credentials and submit$/, async () => {
     const formSel = "[class*='authBoxExpanded-']";
