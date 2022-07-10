@@ -2,10 +2,24 @@ const { fork } = require("child_process");
 const process = require("process");
 const path = require('path');
 
-const cucumberProgram = path.join(process.cwd(), 'node_modules', '@cucumber', 'cucumber', 'bin', 'cucumber-js');
-const cucumberConfJs = path.join(process.cwd(), "cucumber.conf.js");
-const stepsPath = path.join(process.cwd(), "steps");
-const features = path.join(process.cwd(), "features");
+class Main {
+  constructor() {
+    this.cucumberProgram = path.join(process.cwd(), 'node_modules', '@cucumber', 'cucumber', 'bin', 'cucumber-js');
+    this.stepsPath = path.join(process.cwd(), "steps");
+    this.features = path.join(process.cwd(), "features");
+  }
 
-const args = ["--require", cucumberConfJs, "--require", stepsPath, "--", features];
-fork(cucumberProgram, args);
+  _initCucumberProcessVars() {
+    this.cucumberConfJs = path.join(process.cwd(), "cucumber.conf.js");
+
+    this.args = ["--require", this.cucumberConfJs, "--require", this.stepsPath, "--", this.features];
+  }
+
+  init() {
+    this._initCucumberProcessVars();
+    
+    fork(this.cucumberProgram, this.args);
+  }
+}
+
+new Main().init();
