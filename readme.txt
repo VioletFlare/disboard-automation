@@ -1,6 +1,6 @@
 Working Features:
     0.login.Feature
-    discrods.feature
+    discords.feature
     discordservers.feature
     discordst.feature
     topgg.features
