@@ -2,18 +2,27 @@ const { Given, Then, When } = require('@cucumber/cucumber');
 const { client } = require('nightwatch-api');
 
 const timeout = 5000;
+const isChrome = process.env.env === 'chrome';
 
 Then(/^I click topgg cookie policy accept$/,  async () => {
     const cookiePolicyIframe = "[id*=sp_message_container] iframe";
     const cookiePolicyAccept = "#notice > div.message-component.message-row.bottom-row > button:nth-child(2)";
 
     await client
-    .waitForElementVisible(cookiePolicyIframe, timeout)
+    .waitForElementVisible(cookiePolicyIframe, timeout, false) //false -> doesn't abort the test if el not present
     .element('css selector', cookiePolicyIframe, (frame) => {
-        client.frame({ELEMENT: frame.value.ELEMENT}, () => {
-            client.waitForElementVisible(cookiePolicyAccept, timeout)
-            .click(cookiePolicyAccept);
-        });
+        if (isChrome) {
+            client.frame({ELEMENT: frame.value.ELEMENT}, () => {
+                client.waitForElementVisible(cookiePolicyAccept, 1000, false)
+                .click(cookiePolicyAccept);
+            });
+        } else {
+            client.frame(frame.value, () => {
+                client.waitForElementVisible(cookiePolicyAccept, timeout, false)
+                .click(cookiePolicyAccept);
+            });
+        }
+
     })
     .frame(null);
 })
