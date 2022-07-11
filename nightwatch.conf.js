@@ -8,8 +8,7 @@ module.exports = {
       webdriver: {
         start_process: true,
         server_path: chromeDriver.path,
-        port: 4444,
-        cli_args: ['--port=4444']
+        port: 4444
       },
       desiredCapabilities: {
         browserName: 'chrome',
@@ -22,7 +21,8 @@ module.exports = {
     },
     firefox: {
       webdriver: {
-        server_path: geckoDriver.path
+        server_path: geckoDriver.path,
+        port: 4444
       },
       desiredCapabilities: {
         browserName: 'firefox',

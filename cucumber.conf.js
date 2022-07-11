@@ -27,7 +27,7 @@ class CucumberConf {
   }
 
   _setEvents() {
-    BeforeAll(async () => this._setup);
+    BeforeAll(async () => this._setup());
     AfterAll(this._shutdown);
   }
 
