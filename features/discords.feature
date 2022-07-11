@@ -6,6 +6,7 @@ Scenario: Discords
     Given I go to <url>
     Then I click discords button
     Then I click discord authorize button
+    Then I go to <url>
     Then I click discords button
 
 Examples:
